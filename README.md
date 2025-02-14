@@ -1,5 +1,5 @@
 # Terminal Root OS
-A basic Operating System **32-bit**, just the kernel, that prints text directly to the VGA and restarts when you press [ENTER].
+A basic Operating System **32-bit**, just the kernel, that prints text directly to the **VGA** and restarts when you press *[ENTER]*.
 
 ![Terminal Root OS running in QEMU](./qemu-running-terminalroot-os.png)
 
@@ -10,8 +10,9 @@ A basic Operating System **32-bit**, just the kernel, that prints text directly 
 ## Dependencies
 > Example on Ubuntu
 ```bash
-sudo apt install build-essential cmake
+sudo apt install build-essential
 ```
+> C++ Compiler(`g++`), `as`, `ld` and `make`.
 
 Use QEMU to test. Install QEMU:
 ```bash
@@ -24,6 +25,8 @@ sudo apt install qemu-kvm
 
 Compiling:
 ```bash
+git clone https://github.com/terroo/terminalroot-os
+cd terminalroot-os
 make
 ```
 
@@ -31,9 +34,10 @@ Testing:
 ```bash
 qemu-system-i386 -kernel terminal-root-os.bin
 ```
+> Or `qemu-system-x86-64 -kernel terminalroot-os.bin`.
 
 If you want to add to a GRUB Legacy (does not work in UEFI):
-> Edit: `sudo vim /boot/grub/grub.cfg`
+> Edit: `sudo vim /boot/grub/grub.cfg` and move binary: `sudo mv terminalroot-os.bin /boot/`.
 
 Add new line:
 ```bash
@@ -49,4 +53,4 @@ menuentry 'Terminal Root OS' {
 
 ---
 
-[Watch video](https://terminalroot.com.br/)
+### [Watch video](https://youtu.be/3GwRF0IK1Ks)

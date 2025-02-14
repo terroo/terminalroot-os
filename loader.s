@@ -8,7 +8,7 @@
   .long CHECKSUM
 
 .section .text
-.extern kmain # O uso de -fno-leading-underscore evita iniciar o underline, ex.: _kmain
+.extern kmain 
 .global loader
 
 loader:
@@ -24,5 +24,5 @@ _stop:
 
 
 .section .bss
-.space 2*1024*1024; # 2MiB
+.space 2*1024*1024;
 kernel_stack:

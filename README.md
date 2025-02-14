@@ -1,5 +1,5 @@
 # Terminal Root OS
-A basic Operating System, just the kernel, that prints text directly to the VGA and restarts when you press [ENTER].
+A basic Operating System **32-bit**, just the kernel, that prints text directly to the VGA and restarts when you press [ENTER].
 
 ![Terminal Root OS running in QEMU](./qemu-running-terminalroot-os.png)
 

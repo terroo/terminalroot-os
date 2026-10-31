@@ -1,9 +1,14 @@
 #include "kernel.hpp"
+#include "gdt.hpp"
 
 extern "C" void kmain(void* multiboot_structure, unsigned int magicnumber){
 
   TerminalRootOS terminal;
 
+  /* Inicializa a GDT */
+  GDT::init_gdt();
+  terminal.printf("\n\tGDT Inicializada!");
+  
   terminal.printf("  +-----------------------------------------------+\n");
   terminal.printf("  |           ::Terminal Root OS::                |\n");
   terminal.printf("  +-----------------------------------------------+\n");
